@@ -1,0 +1,20 @@
+Bonus:
+
+
+As a team, we decided to implement two features as bonuses, the first being the use of smart pointers and the second being a potion inventory. 
+
+
+Smart pointers can been seen throughout our code mainly in the form of shared_pointers. We chose to implement smart pointers because they make memory management a breeze. Since shared pointers do not require the direct use of the keyword delete, overwriting indices of the floor becomes a breeze. The implementation turned out to be 100% effective as we had no memory leaks and no instances of the words new or delete. 
+
+
+Our second bonus feature was a characters ability to keep a potion inventory. At the beginning of the game the user is prompted to choose whether or not they would like to implement this feature. If the user chooses yes then they now the following two command:
+
+
+1. p <direction>
+This is the command “pick up potion” in the direction the user has given. With similar criteria as the command u, p stores the potion in the user’s inventory which is NOT reset after each floor. 
+      2)  g 
+This is the command “grab potion from inventory”. It allows the user to use the most recently “picked-up” potion. Similar to the using a poition, the user does not know the effects of the potion until “grabbing” it. If the user has no potions in their inventory, an informative message is displayed. 
+
+
+This bonus features is implemented in the hero classes through the useStoredPotion() and storePotion(string direction) methods. These methods are called when the command g and p are read in respectively. The useStoredPotion() is virtual as vampire and drow experience feel the effects of potions differently.
+
